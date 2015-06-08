@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -34,14 +36,25 @@ public class ParserFresh {
 			String c = iteOrder.next().text(); // Mod
 			String d = iteOrder.next().text(); // Time
 			String e = iteTown.next().text(); // Town
+			numbersOutString(d);
+			
 			
 			
 		System.out.println(a + " | " + b + " | " + c + " | " + d + " | " + e);
 		}
 	
-		
+		 
 			
 		} catch(IOException e){}
+	}
+	
+	public static void numbersOutString(String a)
+	{
+		Pattern pat=Pattern.compile("[-]?[0-9]+(.[0-9]+)?");
+		Matcher matcher=pat.matcher(a);
+		while (matcher.find()) {
+		    System.out.println(matcher.group());
+		}
 	}
 
 }
