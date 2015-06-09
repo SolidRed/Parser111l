@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 
 public class Rexep {
 
-	 public static final String TEXT = "3 минуты назад"; 
+	 public static final String TEXT = "33 минуты назад"; 
 	 
 	    public static void main(String[] args){ 
 	    	char a = TEXT.charAt(0);
